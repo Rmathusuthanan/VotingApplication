@@ -1,25 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="../app/lib/ui-bootstrap-csp.css" rel="stylesheet">
-    <link href="app.css" rel="stylesheet">
-    <link href="bootstrap.css" rel="stylesheet">
-    <link href="">
-    <meta charset="UTF-8">
-    <title>Colours Name</title>
-</head>
-<body ng-app="colours">
-<div ng-controller="MainCtrl">
-    <table class="table table-responsive">
-        <tr ng-repeat="clr in colour">
-            <td>{{$index}}</td>
+﻿<script src="~/Areas/Demo2/test/app.module.js" defer></script>
+<script src="~/Areas/Demo2/test/colours.js" defer></script>
+<link href="~/Areas/Demo2/test/app.css" rel="stylesheet">
+<link href="~/Areas/Demo2/test/bootstrap.css" rel="stylesheet">
+<div ng-controller="mainCtrl as vm">
+    <table class="table table-responsive table-bordered">
+
+        <thead>
+        <tr>
+            <td><b>No</b></td>
+            <td><b>colours</b></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="clr in vm.colours">
+            <td>{{$index+1}}</td>
             <td>{{clr.name}}</td>
         </tr>
+        </tbody>
     </table>
-
 </div>
-
-</body>
-<script src="../app/lib/angular.js"></script>
-<script src="main.js"></script>
-</html>
