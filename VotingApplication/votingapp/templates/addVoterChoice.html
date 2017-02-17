@@ -1,0 +1,25 @@
+﻿<div class="well">
+    <form name="userForm" ng-submit="submitForm()" novalidate>
+        <div class="form-group" ng-class="{'has-error' : userForm.Id.$invalid && !userForm.Id.$pristine }">
+
+            <input type="text" class="form-control" placeholder="Id" name="Id" ng-model="userObject.Id" required />
+            <p ng-show="userForm.Id.$invalid && !userForm.Id.$pristine" class="help-block">You Id is required</p>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+            <input type="text" class="form-control" placeholder="Name" ng-model="userObject.name" name="Name" required />
+            <p ng-show="userForm.Name.$invalid && !userForm.Name.$pristine" class="help-block">You Option is required</p>
+
+        </div>
+        <div class="form-group" ng-class="{'has-error' : userForm.Id.$invalid && !userForm.Id.$pristine }">
+            <label for="singleSelect">Question Type: </label>
+            <select name="singleSelect" ng-model="vm.Type" ng-options="item as item.option for item in questype"></select><br>
+
+        </div>
+
+
+
+        <input type="hidden" ng-model="choiceIndex" class="ng-valid"> <button type="button" ng-disabled="userForm.$invalid" class="btn" ng-click="vm.save()"><i class="glyphicon glyphicon glyphicon-ok-circle"></i>Save</button>
+        <button type="button" class="btn" ng-click="closeAll()"><i class="glyphicon glyphicon "></i>Cancel</button>
+    </form>
+</div>

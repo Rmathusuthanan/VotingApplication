@@ -1,0 +1,74 @@
+﻿<div class="col-sm-12">
+    <div class="ContentItemContainer">
+        <div class="panel panel-primary" style="border-style:None;">
+
+            <div class="panel-heading">Voting Details</div>
+            <div class="panel-body-container">
+
+                <div class="panel-body">
+
+                    <div ng-form="myForm" class="form-horizontal" name="myForm" novalidate>
+                        <div class="row">
+                            <div class="form-group">
+                                <!-- Number -->
+                                <label for="No" class="col-sm-1 control-label Required">No:</label>
+                                <div class="col-sm-2" style="width:500px">
+                                    <input type="text" class="form-control" id="No" name="Number" ng-model="vm.party.Number" placeholder="No"
+                                           maxlength="3" style="width:100px"
+                                           uib-tooltip="Required"
+                                           tooltip-placement="top"
+                                           tooltip-trigger="'mouseenter'"
+                                           tooltip-enable="!vm.party.Number" required />
+                                    <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Vote Number"></span>
+                                    <span ng-show="myForm.Number.$dirty && myForm.Number.$invalid"></span>
+                                    <span class="form-error" ng-show="myForm.Number.$error.required">Required</span>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+                        <!--Vote For -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="Name" class="col-sm-1 control-label Required">Name:</label>
+                                <div class="col-sm-2" style="width:500px">
+                                    <input type="text" class="form-control" name="Names" id="Name" ng-model="vm.party.Name" placeholder="Name"
+                                           style="width:280px"
+                                           uib-tooltip="Required"
+                                           tooltip-placement="top"
+                                           tooltip-trigger="'mouseenter'"
+                                           tooltip-enable="!vm.party.Name" required />
+                                    <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Vote For"></span>
+                                    <span ng-show="myForm.Names.$dirty && myForm.Names.$invalid"></span>
+                                    <span class="form-error" ng-show="myForm.Names.$error.required">Required</span>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+                        <!--Description -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="description" class="col-sm-1 control-label">Description:</label>
+                                <div class="col-sm-2" style="width:400px">
+                                    <textarea id="description" type="text" data-ng-model="vm.party.description" class="RadEditorTextArea ContentHtmlEditor" style="height:150px;width:300px;width:300px!important;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+                      
+                            </div>
+                            <div class="panel-footer text-right form-group">
+                                <a class="btn"
+                                   ui-sref="listsVotes"
+                                   style="width:80px">
+                                    < Back
+                                </a>
+                                <button type="button" class="btn" ng-click="vm.SaveParty(myForm)"><i class="glyphicon glyphicon glyphicon-ok-circle"></i>Save</button>
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

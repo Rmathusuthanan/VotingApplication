@@ -1,0 +1,83 @@
+﻿<div class="container-fluid">
+    <div class="col-sm-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Survey</div>
+            <div class="panel-body">
+                <div class="well">
+                    <uib-tabset>
+                        <uib-tab heading="Questions">
+                            <table class="table table-responsive table-hover table-borderless" ng-repeat="ques in  vm.surveyData.voterQuestions">
+                                <tbody>
+                                    <tr>
+                                        <td><b>{{$index+1}} : {{ques.name}}</b></td>
+                                    </tr>
+                                    <tr class="row col-sm-12" ng-repeat="answer in ques.answers">
+                                        <td class="radio" ng-if="ques.type == 'radioButton'">
+                                            <input type="radio" class="col-sm-2" name="answer" group='grp{{ques.Id}}' ng-checked="answer.checked"> {{answer.name}}
+                                        </td>
+                                        <td class="checkbox" ng-if="ques.type == 'checkbox'">
+                                            <input type="checkbox" class="col-sm-2" name="answer" ng-checked="answer.checked"> {{answer.name}}
+                                        </td>
+                                    </tr>
+                                    <!-- <tr> -->
+                                    <!-- <td> -->
+                                    <!-- {{this.surveyData.Name}} -->
+                                    <!-- </td> -->
+                                    <!-- </tr> -->
+                                </tbody>
+
+                            </table>
+                            <div>
+                                
+                                    <button class="btn btn-primary" ng-class="load()">Submit</button>
+                               
+                            </div>
+
+                        </uib-tab>
+                        <uib-tab heading="Results">
+                            <div>
+                                <table class="table table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th>Details</th>
+                                            <th>question Name</th>
+                                            <th>Score</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="ques in  vm.surveyData.voters">
+                                            <td>{{ques.Id}}</td>
+                                            <td><a href="{{ques.Id}}">{{ques.Name}}</a></td>
+                                            <td>{{score}} </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                            </div>
+
+                            <button class="btn btn-primary" ng-click="load(vm.surveyData.Number)">Go</button>
+                        </uib-tab>
+                    </uib-tabset>
+                </div>
+                       
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer text-right form-group">
+        <a class="btn"
+           ui-sref="Survey"
+           style="width:80px">
+            < Back
+        </a>
+        <a class="btn"
+           ui-sref="listsVotes"
+           style="width:80px">
+            Home
+        </a>
+
+
+    </div>
+</div>
+
+

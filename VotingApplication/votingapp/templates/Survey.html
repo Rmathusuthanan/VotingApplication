@@ -1,0 +1,48 @@
+﻿<h1 class="text-center">Voting Application</h1>
+
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Survey  Details</div>
+        <div class="panel-body">
+            <uib-tabset>
+                <uib-tab heading="Survey List">
+                    <div class=" well">
+                        <table class="table table-bordered table-responsive">
+
+                            <thead align="center">
+                                <tr>
+                                    <td><b>Survey ID</b></td>
+                                    <td><b>Survey Name</b></td>
+                                    <td><b>Survey</b></td>
+
+
+                                </tr>
+                            </thead>
+
+                            <tbody align="center">
+                                <tr ng-repeat="ques in vm.questions">
+                                    <td>{{ques.Number}}</td>
+                                    <td>{{ques.Name}}</td>
+                                    <td><a href="#/takesurvey/{{ques.voteId}}">Take Survey</a></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </uib-tab>
+               
+
+            </uib-tabset>
+            <div class="panel-footer text-right form-group">
+                <a class="btn"
+                   ui-sref="listsVotes"
+                   style="width:80px">
+                    < Back
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>

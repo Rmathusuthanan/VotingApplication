@@ -1,0 +1,37 @@
+﻿
+<div class="container-fluid">
+    
+    <uib-tabset>
+
+        <uib-tab heading="Reporte">
+            <div class="container-fluid">
+                <select ng-model="survey.Id" ng-option="ques.Number as ques.Name for ques in vm.questions">
+                    {{vm.questions.Id}}
+
+                </select>
+                <table class="table table-responsive table-striped table-bordered">
+                    
+                    <thead align="center">
+                        <tr>
+                            <th>Details</th>
+                            <th>Voter Id</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+
+                    <tbody align="center">
+                        <tr ng-repeat="result in results">
+                            <td>Select</td>
+                            <td>result.Id</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </uib-tab>
+        <uib-tab heading="Filter">
+            <h1>File Filter</h1>
+        </uib-tab>
+
+    </uib-tabset>
+    </div>

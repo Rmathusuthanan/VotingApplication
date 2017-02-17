@@ -1,0 +1,27 @@
+﻿
+
+<div class="container-fluid col-x-12">  
+    <div class="panel panel-primary">
+        <div class="panel-heading">Voting Application</div>
+        <fieldset style="width: 750px; margin-left: 7px; margin-top: 15px;">
+            <legend class="titleFont" style="margin: 10px 15px 0 15px; text-align: left;">
+                Search Votelist
+            </legend>
+            <br>
+           
+                    <input type="text" ng-model="vm.gridApi.grid.columns[2].filters[0].term" placeholder="Search" />
+               
+            <br>
+        </fieldset>
+        <div class="row">
+            <p class="col-md-1"><a href="#/NewForm"><b>Add New</b> </a></p>
+            <p class="col-md-2"><a href="#/survey"><b>Compaigns</b></a></p>
+            
+        </div>
+        <div ui-grid="vm.gridApiOptions" ui-grid-edit external-scopes="states" class="my-grid">
+        </div>
+
+    </div>
+
+    </div>
+

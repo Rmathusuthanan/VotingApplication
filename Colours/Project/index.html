@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="../app/lib/ui-bootstrap-csp.css" rel="stylesheet">
+    <link href="app.css" rel="stylesheet">
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="">
+    <meta charset="UTF-8">
+    <title>Colours Name</title>
+</head>
+<body ng-app="colours">
+<div ng-controller="MainCtrl">
+    <table class="table table-responsive">
+        <tr ng-repeat="clr in colour">
+            <td>{{$index}}</td>
+            <td>{{clr.name}}</td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+<script src="../app/lib/angular.js"></script>
+<script src="main.js"></script>
+</html>

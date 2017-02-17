@@ -1,0 +1,231 @@
+﻿<div class="col-sm-12">
+    <div class="ContentItemContainer">
+        <div class="panel panel-primary" style="border-style:None;">
+            <div class="panel-heading">Voting Details</div>
+            <div class="panel-body-container">
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="row">
+                            <div class="form-group">
+                                <!-- Number -->
+                                <label for="No" class="col-sm-1 control-label Required">No:</label>
+                                <div class="col-sm-2" style="width:200px">
+                                    <input type="text" class="form-control" id="No" ng-model="vm.party.Number" placeholder="No"
+                                           maxlength="12" style="width:100px"
+                                           uib-tooltip="Required"
+                                           tooltip-placement="top"
+                                           tooltip-trigger="'mouseenter'"
+                                           tooltip-enable="!vm.party.Number" />
+                                    <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Vote Number"></span>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+                        <!--Vote For -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="Name" class="col-sm-1 control-label Required">Name:</label>
+                                <div class="col-sm-2" style="width:400px">
+                                    <input type="text" class="form-control" id="Name" ng-model="vm.party.Name" placeholder="Name"
+                                           maxlength="12" style="width:280px"
+                                           uib-tooltip="Required"
+                                           tooltip-placement="top"
+                                           tooltip-trigger="'mouseenter'"
+                                           tooltip-enable="!vm.party.Name" />
+                                    <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Vote For"></span>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+                        <!--Description -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="description" class="col-sm-1 control-label">Description:</label>
+                                <div class="col-sm-2" style="width:400px">
+                                    <textarea id="description" type="text" data-ng-model="vm.party.description" class="RadEditorTextArea ContentHtmlEditor" style="height:150px;width:300px;width:300px!important;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+                        <!--Effective Date -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="effectiveDate" class="col-sm-1 control-label Required">Effective Date:</label>
+                                <div class="col-sm-2" style="width:280px">
+                                    <div class="input-group" datetimepicker
+                                         data-ng-model="vm.party.effectiveDate" options="vm.options">
+                                        <input type="text" class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+                        <!-- Expiry Date -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="expiryDate" class="col-sm-1 control-label Required">Expiry Date:</label>
+                                <div class="col-sm-2" style="width:280px">
+                                    <div class="input-group" datetimepicker id="expiryDate"
+                                         data-ng-model="vm.party.expiryDate" options="vm.options">
+                                        <input type="text" class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+                        <!--Status-->
+                        <div class="row">
+                            <div class="form-group">
+
+                                <label for="statusDetails" class="col-sm-1 control-label Required">Status:</label>
+
+                                <div class="col-sm-2" style="width:100px">
+                                    <select ng-model="vm.status" id="statusDetails" ng-options="item as item.detail for item in vm.party.Statuses"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        </br>
+                        <!--Created by -->
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="createdByContactKey" class="col-sm-1 control-label ">Created by:</label>
+
+                                <div class="col-sm-2">
+                                    <span ng-bind="vm.party.createdBy" ng-readonly="true"></span>
+                                    <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Creater"></span>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+
+                        <!--Created On -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="createdOn" class="col-sm-1 control-label ">Created On: </label>
+
+                                <div class="col-sm-2">
+                                    <label> {{vm.party.createdOn | date:"MM/dd/yyyy h:mma"}}</label>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+
+                        <!--Update by -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="lastUpdateByContactKey" class="col-sm-1 control-label ">Update by: </label>
+
+                                <div class="col-sm-2">
+                                    <span data-ng-bind="vm.party.lastUpdateBy"></span>
+                                    <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Last Update"></span>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+                        <!--Updated On -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="lastUpdated" class="col-sm-1 control-label ">Update on </label>
+
+                                <div class="col-sm-2" style="width:200px">
+                                    <p> {{vm.party.lastUpdated | date:"MM/dd/yyyy h:mma"}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+
+                        <!--Manager Content Key On -->
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="managerContactKey" class="col-sm-1 control-label ></label>
+
+                                <div class="col-sm-2">
+                                    <span id="managerContactKey" ng-hide="vm.party.managerContactKey"></span>
+                                </div>
+                            </div>
+                            </br>
+
+                            <!--Voter Details & Voter choice-->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <uib-tabset active="activeChoices" choices="true">
+                                        <uib-tab index="0" heading="Voters List">
+                                            <div class="text-right">
+                                                <button type="button" class="btn btn-primary btn" ng-click="vm.addvoter()"><i class="glyphicon glyphicon glyphicon-plus-sign"></i>Add</button>
+                                            </div>
+                                            <table class="table table-striped table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <td><b>ID</b></td>
+                                                        <td><b>Name</b></td>
+                                                        <td><b>Delete</b></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="votersdata in vm.party.voters ">
+                                                        <td>{{votersdata.Id}}</td>
+                                                        <td>{{votersdata.Name}}</td>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <button type="button" class="btn" ng-click="vm.removevoter(votersdata.Id);"><i class="glyphicon glyphicon-trash"></i></button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </uib-tab>
+                                        <uib-tab index="1" heading="Choices">
+                                            <div class="text-right">
+                                                <button type="button" class="btn btn-primary btn" ng-click="vm.addChoice()"><i class="glyphicon glyphicon glyphicon-plus-sign"></i>Add</button>
+                                            </div>
+                                            <table class="table table-striped table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <td><b>ID</b></td>
+                                                        <td><b>voter Choice</b></td>
+                                                        <td>Action</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="voterschoice in  vm.party.voterChoice">
+                                                        <td>{{voterschoice.Id}}</td>
+                                                        <td>{{voterschoice.option}}</td>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                <button type="button" class="btn" ng-click="vm.edit($index);"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                                <button type="button" class="btn" ng-click="vm.removeRow(voterschoice.Id);"><i class="glyphicon glyphicon-trash"></i></button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </uib-tab>
+                                    </uib-tabset>
+                                </div>
+                            </div>
+                            <div class="panel-footer text-right form-group">
+                                <a class="btn"
+                                   ui-sref="listsVotes"
+                                   style="width:80px">
+                                    < Back
+                                </a>
+                                <button type="button" class="btn" ng-click="vm.SaveParty()"><i class="glyphicon glyphicon glyphicon-ok-circle"></i>Save</button>
+                            </div>
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

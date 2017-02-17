@@ -1,0 +1,17 @@
+﻿<div class="well"><form name="userForm" ng-submit="submitForm()" novalidate>
+    <div class="form-group" ng-class="{'has-error' : userForm.Id.$invalid && !userForm.Id.$pristine }">
+
+        <input type="text" class="form-control" placeholder="Enter the Id" name="Id" ng-model="voter.Id" required />
+        <p ng-show="userForm.Id.$invalid && !userForm.Id.$pristine" class="help-block">You Id is required</p>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error' : userForm.Name.$invalid && !userForm.Name.$pristine }">
+        <input type="text" class="form-control" placeholder="Enter the Name" ng-model="voter.Name" name="Name" required />
+        <p ng-show="userForm.Name.$invalid && !userForm.Name.$pristine" class="help-block">You Name is required</p>
+
+    </div>
+
+     <input type="hidden" ng-model="voterindex" class="ng-valid"> <button type="button" ng-disabled="userForm.$invalid" class="btn" ng-click="vm.savevoter()"><i class="glyphicon glyphicon glyphicon-ok-circle"></i>Save</button>
+    <button type="button" class="btn" ng-click="closeAll()"><i class="glyphicon glyphicon "></i>Cancel</button>
+</form>
+</div>  
