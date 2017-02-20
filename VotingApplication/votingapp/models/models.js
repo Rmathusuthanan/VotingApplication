@@ -4,12 +4,11 @@ var votingModule;
     (function (models) {
         'use strict';
         var VotingData = (function () {
-            function VotingData(_id, voteId, voteKey, Number, Name, description, effectiveDate, startTime, expiryDate, endTime, managerContactKey, voters, Status, Statuses, 
+            function VotingData( voteId, voteKey, Number, Name, description, effectiveDate, startTime, expiryDate, endTime, managerContactKey, voters, Status, Statuses, 
                 // public voterchoice: string,
                 voterQuestions, 
                 //public answers: any[],
                 createdOn, createdBy, lastUpdated, lastUpdateBy, lastUpdateByContactKey, select, questiontype) {
-                this._id = _id;
                 this.voteId = voteId;
                 this.voteKey = voteKey;
                 this.Number = Number;
